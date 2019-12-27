@@ -10,3 +10,4 @@ SRC +=  ./lib/glcdfont.c \
         # ./lib/timelogger.c \
 
 EXTRAKEY_ENABLE = yes
+LEADER_ENABLE = yes
