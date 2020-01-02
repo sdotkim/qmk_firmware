@@ -64,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT( \
       _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______,\
-      _______, KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC, KC_LPRN,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
-      _______, KC_MINS,  KC_EQL, KC_RBRC, KC_RBRC, KC_RPRN,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
+      _______, KC_UNDS, KC_PLUS, KC_LBRC, KC_LCBR, KC_LPRN,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
+      _______, KC_MINS,  KC_EQL, KC_RBRC, KC_RCBR, KC_RPRN,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
                                           _______, _______, _______,    _______, _______, _______ \
   ),
   [_A] = LAYOUT( \
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SPACE] = LAYOUT( \
       _______, MM_AGIN, XXXXXXX, MT_COPY, MT_PSTE, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
       _______, MM_SALL, MM_SAVE, XXXXXXX, KC_BSPC,  KC_DEL,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
-      _______, MM_UNDO,  MM_CUT, MM_COPY, MM_PSTE, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
+      _______, MM_UNDO,  MM_CUT, MM_COPY, MM_PSTE,  KC_ENT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
                                           _______, _______, _______,    _______, _______, _______ \
   ),
 
