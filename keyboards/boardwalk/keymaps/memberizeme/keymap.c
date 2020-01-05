@@ -1,17 +1,5 @@
-#include QMK_KEYBOARD_H
+#include "memberizeme.h"
 
-// One shot modifier keys.
-#define MD_LSFT MT(MOD_LSFT, KC_TAB)
-#define MD_LCTL MT(MOD_LCTL, KC_GRV)
-#define MD_RSFT MT(MOD_RSFT, KC_QUOT)
-#define MD_RCTL MT(MOD_RCTL, KC_BSLS)
-
-// Layer modifiers.
-#define LOWER MO(_LOWER)
-#define RAISE MO(_RAISE)
-#define SPACE LT(_SPACE, KC_SPC)
-#define ENTER KC_ENT
-#define META OSL(_META)
 
 // Layer shorthand
 enum layer {
@@ -86,25 +74,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_SPACE] = LAYOUT_memberizeme(
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+     _______, MM_AGIN, XXXXXXX, MT_COPY, MT_PSTE, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+     _______, MM_SALL, MM_SAVE, XXXXXXX, KC_BSPC,  KC_DEL,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+     _______, MM_UNDO,  MM_CUT, MM_COPY, MM_PSTE,  KC_ENT,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
      _______, _______, _______, _______, _______, _______,      _______, _______,      _______, _______, _______, _______, _______, _______  \
  ),
 
- /* GAMING
- * .------------------------------------------------------     ------------------     -----------------------------------------------------.
- * | ESC    | 1      | 2      | 3      | 4      | 5      |             |        |      TRANSP | TRANSP | TRANSP | TRANSP | TRANSP | TRANSP |
- * |--------+--------+--------+--------+--------+--------+     --------+--------+     --------+--------+--------+--------+-----------------|
- * | T      | TAB    | Q      | W      | E      | R      |             |        |      TRANSP | TRANSP | TRANSP | TRANSP | TRANSP | TRANSP |
- * |--------+--------+--------+--------+--------+--------+     --------+--------+     --------+--------+--------+-----------------+--------|
- * | G      | LSHIFT | A      | S      | D      | F      |      KC_NO  | KC_NO  |      TRANSP | TRANSP | TRANSP | TRANSP | TRANSP | TRANSP |
- * |--------+--------+--------+--------+--------+--------+     --------+--------+     --------+--------+--------------------------+--------|
- * | B      | LCTRL  | Z      | X      | C      | V      |             |        |      TRANSP | TRANSP | TRANSP | TRANSP | TRANSP | TRANSP |
- * |--------+--------+--------+--------+--------+---------     --------+--------+     --------+--------+-----------------+--------+--------|
- * |        |        |        |        |        | LALT   |      SPACE  | KC_NO  |             | RCTRL  | KC_MENU|        |        |        |
- * '------------------------------------------------------     ------------------     -----------------------------------------------------'
- */
  [_GM] = LAYOUT_memberizeme(
      KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,         XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
      KC_T,    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,         XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
@@ -113,23 +88,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT,      KC_SPC,  XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
  ),
 
- /* META
- * .------------------------------------------------------     ------------------     -----------------------------------------------------.
- * |        |        |        |        |        |        |             |        |             |        |        |        |        | LAYER 0|
- * |--------+--------+--------+--------+--------+--------+     --------+--------+     --------+--------+--------+--------+-----------------|
- * |        |        |        |        |        |        |             |        |             |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+     --------+--------+     --------+--------+--------+-----------------+--------|
- * |        | LAYER 1| LAYER 2| LAYER 3| LAYER 4|        |      KC_NO  | KC_NO  |             |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+     --------+--------+     --------+--------+--------------------------+--------|
- * |        |        |        |        |        |        |             |        |             |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+---------     --------+--------+     --------+--------+-----------------+--------+--------|
- * |        |        |        |        |        |        |             | KC_NO  |             |        |        |        |        |        |
- * '------------------------------------------------------     ------------------     -----------------------------------------------------'
- */
  [_META] = LAYOUT_memberizeme(
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,        TO(1),   TO(2),   TO(3),   TO(4),   TO(5),   TO(0), \
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(_GM),      XXXXXXX, XXXXXXX,      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(_GM), XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, \
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, \
        RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP  \
  )
