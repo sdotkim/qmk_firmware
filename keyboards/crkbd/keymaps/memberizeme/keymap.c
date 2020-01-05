@@ -1,19 +1,4 @@
-#include QMK_KEYBOARD_H
-
-// One shot modifier keys.
-#define MD_LSFT MT(MOD_LSFT, KC_TAB)
-#define MD_LCTL MT(MOD_LCTL, KC_GRV)
-#define MD_RSFT MT(MOD_RSFT, KC_QUOT)
-#define MD_RCTL MT(MOD_RCTL, KC_BSLS)
-#define ALT_TAB LALT(KC_TAB)
-
-// Layer switch.
-#define LOWER MO(_LOWER)
-#define RAISE MO(_RAISE)
-#define SPACE LT(_SPACE, KC_SPC)
-#define ENTER KC_ENT
-#define META OSL(_META)
-#define LT_A LT(_A, KC_A)
+#include "memberizeme.h"
 
 // Layer shorthand
 enum layer {
@@ -23,19 +8,6 @@ enum layer {
   _A,
   _SPACE,
   _META
-};
-
-enum custom_keycodes {
-  MEMBERIZEME = SAFE_RANGE,
-  MM_AGIN,
-  MM_COPY,
-  MM_CUT,
-  MM_PSTE,
-  MM_SALL,
-  MM_SAVE,
-  MM_UNDO,
-  MT_COPY,
-  MT_PSTE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -84,59 +56,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_META] = LAYOUT( \
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        TO(1),   TO(2),   TO(3),   TO(4),   TO(5),   TO(0),\
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,\
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEAD, XXXXXXX,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,\
         RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, KC_SLEP,\
                                           _______, _______, _______,    _______, _______, _______ \
   )
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case MM_AGIN:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL(SS_LSFT("z")));
-      }
-      break;
-    case MM_COPY:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("c"));
-      }
-      break;
-    case MM_CUT:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("x"));
-      }
-      break;
-    case MM_PSTE:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("v"));
-      }
-      break;
-    case MM_SALL:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("a"));
-      }
-      break;
-    case MM_SAVE:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("s"));
-      }
-      break;
-    case MM_UNDO:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("z"));
-      }
-      break;
-    case MT_COPY:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL(SS_LSFT("c")));
-      }
-      break;
-    case MT_PSTE:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL(SS_LSFT("v")));
-      }
-      break;
-  }
-  return true;
 };

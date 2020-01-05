@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,      KC_LBRC, KC_RBRC,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, XXXXXXX, \
    MD_LSFT,    LT_A,    KC_S,    KC_D,    KC_F,    KC_G,      XXXXXXX, XXXXXXX,         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, MD_RSFT, \
    MD_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,      KC_BSPC,  KC_ENT,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL, \
-   XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,        SPACE, XXXXXXX,        RAISE, KC_RALT,  KC_APP, XXXXXXX, XXXXXXX, XXXXXXX  \
+   KC_LEAD, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,        SPACE, XXXXXXX,        RAISE, KC_RALT,  KC_APP, XXXXXXX, XXXXXXX, XXXXXXX  \
  ),
 
  [_RAISE] = LAYOUT_memberizeme(
