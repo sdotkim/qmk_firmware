@@ -20,6 +20,7 @@
 
 enum custom_keycodes {
   MEMBERIZEME = SAFE_RANGE,
+  KC_MAKE,           // Rebuild the current firmware
   MM_AGIN,
   MM_COPY,
   MM_CUT,
