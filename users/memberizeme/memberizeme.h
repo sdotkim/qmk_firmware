@@ -1,6 +1,13 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
+//Tap Dance Declarations
+enum {
+  TD_ESC_CAPS = 0
+};
+
+// Tad Dance shorthands for layer definitions.
+#define TD_ESCC TD(TD_ESC_CAPS)
 
 // Layer modifiers.
 #define LOWER MO(_LOWER)
