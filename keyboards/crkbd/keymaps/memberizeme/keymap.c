@@ -6,7 +6,6 @@ enum layer {
   _RAISE,
   _LOWER,
   _A,
-  _SPACE,
   _META
 };
 
@@ -21,10 +20,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   */
   [_BASE] = LAYOUT( \
-       KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,     META,\
-      MD_LSFT,    LT_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, MD_RSFT,\
-      MD_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL,\
-                                          KC_LGUI,   LOWER,   SPACE,      ENTER,   RAISE, KC_RALT \
+      TD_ESCC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       TD_KCY,  TD_KCU,    KC_I,    KC_O,   KC_P,     META,\
+      MD_LSFT,  TD_KCA,  TD_KCS,    KC_D,    KC_F,    KC_G,                       TD_KCH,  TD_KCJ,  TD_KCK,  TD_KCL, KC_SCLN, MD_RSFT,\
+      MD_LCTL,  TD_KCZ,  TD_KCX,  TD_KCC,  TD_KCV,    KC_B,                       TD_KCN,  TD_KCM, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL,\
+                                          KC_LGUI,   LOWER,  TD_KCSP,   TD_KCEN,   RAISE, KC_RALT \
   ),
 
   [_RAISE] = LAYOUT( \
@@ -40,6 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_UNDS, KC_PLUS, KC_RBRC, KC_RCBR, KC_RPRN,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
                                           _______, _______, _______,    _______, _______, _______ \
   ),
+
   [_A] = LAYOUT( \
       _______, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
       _______, XXXXXXX,   KC_F5,   KC_F6,   KC_F7,   KC_F8,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
@@ -47,15 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           _______, _______, _______,    _______, _______, _______ \
     ),
 
-  [_SPACE] = LAYOUT( \
-      _______, MM_AGIN, XXXXXXX, MT_COPY, MT_PSTE, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
-      _______, MM_SALL, MM_SAVE, XXXXXXX, KC_BSPC,  KC_DEL,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
-      _______, MM_UNDO,  MM_CUT, MM_COPY, MM_PSTE,  KC_ENT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
-                                          _______, _______, _______,    _______, _______, _______ \
-  ),
-
   [_META] = LAYOUT( \
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        TO(1),   TO(2),   TO(3),   TO(4),   TO(5),   TO(0),\
+      KC_MAKE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        TO(1),   TO(2),   TO(3),   TO(4),   TO(5),   TO(0),\
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEAD, XXXXXXX,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,\
         RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, KC_SLEP,\
                                           _______, _______, _______,    _______, _______, _______ \

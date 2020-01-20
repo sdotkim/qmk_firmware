@@ -5,9 +5,7 @@
 // Layer modifiers.
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
-#define SPACE LT(_SPACE, KC_SPC)
 #define LT_A LT(_A, KC_A)
-#define ENTER KC_ENT
 #define META OSL(_META)
 
 
@@ -21,13 +19,4 @@
 enum custom_keycodes {
   MEMBERIZEME = SAFE_RANGE,
   KC_MAKE,           // Rebuild the current firmware
-  MM_AGIN,
-  MM_COPY,
-  MM_CUT,
-  MM_PSTE,
-  MM_SALL,
-  MM_SAVE,
-  MM_UNDO,
-  MT_COPY,
-  MT_PSTE
 };

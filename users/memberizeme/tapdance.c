@@ -45,41 +45,74 @@ void dance_kch (qk_tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_H);
-      unregister_code(KC_H);
       break;
     case 2:
-      register_code(KC_LGUI);
       register_code(KC_LEFT);
-      unregister_code(KC_LEFT);
-      unregister_code(KC_LGUI);
       break;
     case 3:
       register_code(KC_LGUI);
+      register_code(KC_LEFT);
+      break;
+    case 4:
+      register_code(KC_LGUI);
       register_code(KC_LSFT);
       register_code(KC_LEFT);
+      break;
+  }
+}
+void dance_kch_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      unregister_code(KC_H);
+      break;
+    case 2:
+      unregister_code(KC_LEFT);
+      break;
+    case 3:
+      unregister_code(KC_LEFT);
+      unregister_code(KC_LGUI);
+      break;
+    case 4:
       unregister_code(KC_LEFT);
       unregister_code(KC_LSFT);
       unregister_code(KC_LGUI);
       break;
   }
 }
+
 // Tap Dance KC_J
 void dance_kcj (qk_tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_J);
-      unregister_code(KC_J);
       break;
     case 2:
-      register_code(KC_LGUI);
       register_code(KC_DOWN);
-      unregister_code(KC_DOWN);
-      unregister_code(KC_LGUI);
       break;
     case 3:
       register_code(KC_LGUI);
+      register_code(KC_DOWN);
+      break;
+    case 4:
+      register_code(KC_LGUI);
       register_code(KC_LSFT);
       register_code(KC_DOWN);
+      break;
+  }
+}
+void dance_kcj_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      unregister_code(KC_J);
+      break;
+    case 2:
+      unregister_code(KC_DOWN);
+      break;
+    case 3:
+      unregister_code(KC_DOWN);
+      unregister_code(KC_LGUI);
+      break;
+    case 4:
       unregister_code(KC_DOWN);
       unregister_code(KC_LSFT);
       unregister_code(KC_LGUI);
@@ -92,19 +125,35 @@ void dance_kck (qk_tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_K);
-      unregister_code(KC_K);
       break;
     case 2:
-      register_code(KC_LGUI);
       register_code(KC_UP);
-      unregister_code(KC_UP);
-      unregister_code(KC_LGUI);
       break;
     case 3:
       register_code(KC_LGUI);
+      register_code(KC_UP);
+      break;
+    case 4:
+      register_code(KC_LGUI);
       register_code(KC_LSFT);
-      register_code(KC_LEFT);
-      unregister_code(KC_LEFT);
+      register_code(KC_UP);
+      break;
+  }
+}
+void dance_kck_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      unregister_code(KC_K);
+      break;
+    case 2:
+      unregister_code(KC_UP);
+      break;
+    case 3:
+      unregister_code(KC_UP);
+      unregister_code(KC_LGUI);
+      break;
+    case 4:
+      unregister_code(KC_UP);
       unregister_code(KC_LSFT);
       unregister_code(KC_LGUI);
       break;
@@ -116,18 +165,34 @@ void dance_kcl (qk_tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_L);
-      unregister_code(KC_L);
       break;
     case 2:
-      register_code(KC_LGUI);
       register_code(KC_RGHT);
-      unregister_code(KC_RGHT);
-      unregister_code(KC_LGUI);
       break;
     case 3:
       register_code(KC_LGUI);
+      register_code(KC_RGHT);
+      break;
+    case 4:
+      register_code(KC_LGUI);
       register_code(KC_LSFT);
       register_code(KC_RGHT);
+      break;
+  }
+}
+void dance_kcl_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      unregister_code(KC_L);
+      break;
+    case 2:
+      unregister_code(KC_RGHT);
+      break;
+    case 3:
+      unregister_code(KC_RGHT);
+      unregister_code(KC_LGUI);
+      break;
+    case 4:
       unregister_code(KC_RGHT);
       unregister_code(KC_LSFT);
       unregister_code(KC_LGUI);
@@ -219,13 +284,19 @@ void dance_kcz (qk_tap_dance_state_t *state, void *user_data) {
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
   [TD_KC_A] = ACTION_TAP_DANCE_FN(dance_kca),
+  [TD_KC_ENTER] = ACTION_TAP_DANCE_DOUBLE(KC_ENT, KC_DEL),
   [TD_KC_C] = ACTION_TAP_DANCE_FN(dance_kcc),
-  [TD_KC_H] = ACTION_TAP_DANCE_FN(dance_kch),
-  [TD_KC_J] = ACTION_TAP_DANCE_FN(dance_kcj),
-  [TD_KC_K] = ACTION_TAP_DANCE_FN(dance_kck),
-  [TD_KC_L] = ACTION_TAP_DANCE_FN(dance_kcl),
+  [TD_KC_H] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_kch, dance_kch_reset),
+  [TD_KC_J] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_kcj, dance_kcj_reset),
+  [TD_KC_K] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_kck, dance_kck_reset),
+  [TD_KC_L] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_kcl, dance_kcl_reset),
+  [TD_KC_M] = ACTION_TAP_DANCE_DOUBLE(KC_M, KC_PGDN),
+  [TD_KC_N] = ACTION_TAP_DANCE_DOUBLE(KC_N, KC_END),
   [TD_KC_S] = ACTION_TAP_DANCE_FN(dance_kcs),
+  [TD_KC_SPACE] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_BSPC),
+  [TD_KC_U] = ACTION_TAP_DANCE_DOUBLE(KC_U, KC_PGUP),
   [TD_KC_V] = ACTION_TAP_DANCE_FN(dance_kcv),
   [TD_KC_X] = ACTION_TAP_DANCE_FN(dance_kcx),
+  [TD_KC_Y] = ACTION_TAP_DANCE_DOUBLE(KC_Y, KC_HOME),
   [TD_KC_Z] = ACTION_TAP_DANCE_FN(dance_kcz)
 };
