@@ -49,9 +49,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
  [_BASE] = LAYOUT_memberizeme(
    XXXXXXX,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,      KC_MINS,  KC_EQL,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    META, \
-   TD_ESCC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,      KC_LBRC, KC_RBRC,       TD_KCY,  TD_KCU,    KC_I,    KC_O,    KC_P, XXXXXXX, \
-   MD_LSFT,  TD_KCA,  TD_KCS,    KC_D,    KC_F,    KC_G,      XXXXXXX, XXXXXXX,       TD_KCH,  TD_KCJ,  TD_KCK,  TD_KCL, KC_SCLN, MD_RSFT, \
-   MD_LCTL,  TD_KCZ,  TD_KCX,  TD_KCC,  TD_KCV,    KC_B,      KC_BSPC, TD_KCEN,       TD_KCN,  TD_KCM, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL, \
+   TD_ESCC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,      KC_LBRC, KC_RBRC,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, XXXXXXX, \
+   MD_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,      XXXXXXX, XXXXXXX,         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, MD_RSFT, \
+   MD_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,      KC_BSPC, TD_KCEN,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL, \
    KC_LEAD, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,      TD_KCSP, XXXXXXX,        RAISE, KC_RALT,  KC_APP, XXXXXXX, XXXXXXX, XXXXXXX  \
  ),
 

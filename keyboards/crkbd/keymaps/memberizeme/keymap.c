@@ -20,9 +20,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   */
   [_BASE] = LAYOUT( \
-      TD_ESCC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       TD_KCY,  TD_KCU,    KC_I,    KC_O,   KC_P,     META,\
-      MD_LSFT,  TD_KCA,  TD_KCS,    KC_D,    KC_F,    KC_G,                       TD_KCH,  TD_KCJ,  TD_KCK,  TD_KCL, KC_SCLN, MD_RSFT,\
-      MD_LCTL,  TD_KCZ,  TD_KCX,  TD_KCC,  TD_KCV,    KC_B,                       TD_KCN,  TD_KCM, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL,\
+      TD_ESCC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,     META,\
+      MD_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, MD_RSFT,\
+      MD_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL,\
                                           KC_LGUI,   LOWER,  TD_KCSP,   TD_KCEN,   RAISE, KC_RALT \
   ),
 
