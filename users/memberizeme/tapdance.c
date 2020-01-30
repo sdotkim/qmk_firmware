@@ -280,6 +280,67 @@ void dance_kcz (qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
+
+// Tap Dance Copy
+void dance_copy (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      register_code(KC_LCTL);
+      register_code(KC_C);
+      unregister_code(KC_C);
+      unregister_code(KC_LCTL);
+      break;
+    case 2:
+      register_code(KC_LCTL);
+      register_code(KC_LSFT);
+      register_code(KC_C);
+      unregister_code(KC_C);
+      unregister_code(KC_LSFT);
+      unregister_code(KC_LCTL);
+      break;
+  }
+}
+
+// Tap Dance Paste
+void dance_paste (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      register_code(KC_LCTL);
+      register_code(KC_V);
+      unregister_code(KC_V);
+      unregister_code(KC_LCTL);
+      break;
+    case 2:
+      register_code(KC_LCTL);
+      register_code(KC_LSFT);
+      register_code(KC_V);
+      unregister_code(KC_V);
+      unregister_code(KC_LSFT);
+      unregister_code(KC_LCTL);
+      break;
+  }
+}
+
+// Tap Dance Paste
+void dance_undo (qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      register_code(KC_LCTL);
+      register_code(KC_Z);
+      unregister_code(KC_Z);
+      unregister_code(KC_LCTL);
+      break;
+    case 2:
+      register_code(KC_LCTL);
+      register_code(KC_LSFT);
+      register_code(KC_Z);
+      unregister_code(KC_Z);
+      unregister_code(KC_LSFT);
+      unregister_code(KC_LCTL);
+      break;
+  }
+}
+
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
@@ -298,5 +359,13 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_KC_V] = ACTION_TAP_DANCE_FN(dance_kcv),
   [TD_KC_X] = ACTION_TAP_DANCE_FN(dance_kcx),
   [TD_KC_Y] = ACTION_TAP_DANCE_DOUBLE(KC_Y, KC_HOME),
-  [TD_KC_Z] = ACTION_TAP_DANCE_FN(dance_kcz)
+  [TD_KC_Z] = ACTION_TAP_DANCE_FN(dance_kcz),
+  [TD__BRC] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+  [TD__CRB] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+  [TD__EQL] = ACTION_TAP_DANCE_DOUBLE(KC_EQL, KC_PLUS),
+  [TD__MNS] = ACTION_TAP_DANCE_DOUBLE(KC_MINS, KC_UNDS),
+  [TD__PRN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
+  [TD__COPY] = ACTION_TAP_DANCE_FN(dance_copy),
+  [TD__PASTE] = ACTION_TAP_DANCE_FN(dance_paste),
+  [TD__UNDO] = ACTION_TAP_DANCE_FN(dance_undo),
 };
