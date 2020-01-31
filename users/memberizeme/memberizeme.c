@@ -19,7 +19,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #elif defined(BOOTLOADER_CATERINA)
                      ":avrdude"
 #endif // bootloader options
-                     SS_TAP(X_ENTER)), 10);
+                     SS_TAP(X_ENTER)), 3);
       }
       return false;
       break;
