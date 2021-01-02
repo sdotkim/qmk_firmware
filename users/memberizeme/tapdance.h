@@ -1,3 +1,5 @@
+#pragma once
+
 //Tap Dance Declarations
 enum {
   TD_ESC_CAPS = 0,

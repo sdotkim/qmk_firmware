@@ -1,4 +1,5 @@
 #include "memberizeme.h"
+#include "tapdance.h"
 
 // Tap Dance KC_A
 void dance_kca (qk_tap_dance_state_t *state, void *user_data) {

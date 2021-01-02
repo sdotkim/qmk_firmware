@@ -1,6 +1,5 @@
 #pragma once
 #include QMK_KEYBOARD_H
-#include "tapdance.h"
 
 // Layer modifiers.
 #define LOWER MO(_LOWER)
