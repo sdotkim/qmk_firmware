@@ -3,11 +3,11 @@
 
 // Layer shorthand
 enum layer {
+  _GM,
   _BASE,
   _RAISE,
   _LOWER,
   _A,
-  _GM,
   _META
 };
 
@@ -36,6 +36,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 */
 
+[_GM] = LAYOUT_ortho_5x14(
+ KC_ESC  , XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   ,      KC_5   , XXXXXXX,      _______, _______, _______, _______, _______,    META, \
+ KC_T    , KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   ,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
+ KC_G    , KC_LSFT, KC_A   , KC_S   , KC_D   , KC_F   ,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
+ KC_B    , KC_LCTL, KC_Z   , KC_X   , KC_C   , KC_V   ,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
+ XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT,      KC_SPC,  XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC  \
+),
+
 /* BASE
  * .------------------------------------------------------     ------------------     -----------------------------------------------------.
  * | XXXXXXX| 1      | 2      | 3      | 4      | 5      |      -      | =      |      6      | 7      | 8      | 9      | 0      | META   |
@@ -54,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,      KC_BSPC, KC_RBRC,       KC_Y  , KC_U   , KC_I   , KC_O   , KC_P   , XXXXXXX, \
    MD_LSFT, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,      XXXXXXX, XXXXXXX,       KC_H  , KC_J   , KC_K   , KC_L   , KC_SCLN, MD_RSFT, \
    MD_LCTL, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,      KC_BSPC,  KC_ENT,       KC_N  , KC_M   , KC_COMM,  KC_DOT, KC_SLSH, MD_RCTL, \
-   KC_LEAD, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,      KC_SPC,   KC_ENT,        RAISE, KC_RALT,  KC_APP, XXXXXXX, XXXXXXX, XXXXXXX  \
+   TO(1)  , XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,      KC_SPC,   KC_ENT,        RAISE, KC_RALT,  KC_APP, XXXXXXX, XXXXXXX, XXXXXXX  \
  ),
 
  [_RAISE] = LAYOUT_ortho_5x14(
@@ -62,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
    _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,      XXXXXXX, XXXXXXX,      KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, _______, \
    _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,      XXXXXXX, XXXXXXX,      KC_HOME,  KC_END, KC_PGUP, KC_PGDN, XXXXXXX, _______, \
-   _______, _______, _______, _______, _______, _______,      _______, _______,      _______, _______, _______, _______, _______, _______  \
+   TO(2)  , _______, _______, _______, _______, _______,      _______, _______,      _______, _______, _______, _______, _______, _______  \
  ),
 
  [_LOWER] = LAYOUT_ortho_5x14(
@@ -70,15 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _______, KC_UNDS, KC_PLUS, KC_RBRC, KC_RCBR, KC_RPRN,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
     KC_GRV, KC_MINS,  KC_EQL, KC_LBRC, KC_LCBR, KC_LPRN,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT, \
    KC_TILD, TD_UNDO, TD_COPY, TD_PSTE, KC_BSPC,  KC_DEL,      XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, \
-   _______, _______, _______, _______, _______, _______,      _______, _______,       KC_INS, _______, _______, _______, _______, _______  \
- ),
-
- [_GM] = LAYOUT_ortho_5x14(
-    KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
-      KC_T,  KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
-      KC_G, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
-      KC_B, KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,      XXXXXXX, XXXXXXX,      _______, _______, _______, _______, _______, _______, \
-   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT,  KC_SPC,      KC_SPC,  XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC  \
+   TO(4)  , _______, _______, _______, _______, _______,      _______, _______,       KC_INS, _______, _______, _______, _______, _______  \
  ),
 
  [_META] = LAYOUT_ortho_5x14(
