@@ -1,2 +1,2 @@
 #pragma once
-#define MASTER_RIGHT
+#define EE_HANDS

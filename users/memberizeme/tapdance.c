@@ -2,7 +2,7 @@
 #include "tapdance.h"
 
 // Tap Dance KC_A
-void dance_kca (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kca (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_A);
@@ -18,7 +18,7 @@ void dance_kca (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_C
-void dance_kcc (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcc (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_C);
@@ -42,7 +42,7 @@ void dance_kcc (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_H
-void dance_kch (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kch (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_H);
@@ -61,7 +61,7 @@ void dance_kch (qk_tap_dance_state_t *state, void *user_data) {
       break;
   }
 }
-void dance_kch_reset (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kch_reset (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       unregister_code(KC_H);
@@ -82,7 +82,7 @@ void dance_kch_reset (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_J
-void dance_kcj (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcj (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_J);
@@ -101,7 +101,7 @@ void dance_kcj (qk_tap_dance_state_t *state, void *user_data) {
       break;
   }
 }
-void dance_kcj_reset (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcj_reset (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       unregister_code(KC_J);
@@ -122,7 +122,7 @@ void dance_kcj_reset (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_K
-void dance_kck (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kck (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_K);
@@ -141,7 +141,7 @@ void dance_kck (qk_tap_dance_state_t *state, void *user_data) {
       break;
   }
 }
-void dance_kck_reset (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kck_reset (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       unregister_code(KC_K);
@@ -162,7 +162,7 @@ void dance_kck_reset (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_L
-void dance_kcl (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcl (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_L);
@@ -181,7 +181,7 @@ void dance_kcl (qk_tap_dance_state_t *state, void *user_data) {
       break;
   }
 }
-void dance_kcl_reset (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcl_reset (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       unregister_code(KC_L);
@@ -202,7 +202,7 @@ void dance_kcl_reset (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_S
-void dance_kcs (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcs (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_S);
@@ -218,7 +218,7 @@ void dance_kcs (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_V
-void dance_kcv (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcv (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_V);
@@ -242,7 +242,7 @@ void dance_kcv (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_X
-void dance_kcx (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcx (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_X);
@@ -258,7 +258,7 @@ void dance_kcx (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance KC_Z
-void dance_kcz (qk_tap_dance_state_t *state, void *user_data) {
+void dance_kcz (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
         register_code(KC_Z);
@@ -283,7 +283,7 @@ void dance_kcz (qk_tap_dance_state_t *state, void *user_data) {
 
 
 // Tap Dance Copy
-void dance_copy (qk_tap_dance_state_t *state, void *user_data) {
+void dance_copy (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_LCTL);
@@ -303,7 +303,7 @@ void dance_copy (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance Paste
-void dance_paste (qk_tap_dance_state_t *state, void *user_data) {
+void dance_paste (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_LCTL);
@@ -323,7 +323,7 @@ void dance_paste (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance Paste
-void dance_undo (qk_tap_dance_state_t *state, void *user_data) {
+void dance_undo (tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       register_code(KC_LCTL);
@@ -343,7 +343,7 @@ void dance_undo (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 //Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
   [TD_KC_A] = ACTION_TAP_DANCE_FN(dance_kca),
   [TD_KC_ENTER] = ACTION_TAP_DANCE_DOUBLE(KC_ENT, KC_DEL),

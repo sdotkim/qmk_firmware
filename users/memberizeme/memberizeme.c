@@ -27,10 +27,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 };
 
-LEADER_EXTERNS();
-
+// LEADER_EXTERNS();
+/*
 void matrix_scan_user(void) {
-  LEADER_DICTIONARY() {
+  void LEADER_DICTIONARY() {
     leading = false;
     leader_end();
 
@@ -76,3 +76,4 @@ void matrix_scan_user(void) {
     }
   }
 }
+*/
